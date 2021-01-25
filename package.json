@@ -1,0 +1,35 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get your application up and running.",
+  "main": "src/index.js",
+  "bin": {
+    "p-loader": "bin/page-loader.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tredok@bitbucket.org/tredok/page-loader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/tredok/page-loader#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.3",
+    "commander": "^6.2.0",
+    "debug": "^4.3.1",
+    "execa": "^5.0.0",
+    "htmlparser2": "^5.0.1",
+    "listr": "^0.14.3",
+    "lodash": "^4.17.20",
+    "node-html-parser": "^2.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
