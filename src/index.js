@@ -32,10 +32,6 @@ const mapping = {
 }
 
 const app = (pageLink, destination) => {
-  fs.readdir(destination).catch((err) => {
-    return Promise.reject(err)
-  })
-
   const pageUrl = new URL(pageLink)
   const { hostname, pathname } = pageUrl
 
@@ -84,7 +80,7 @@ const app = (pageLink, destination) => {
       html = $.html()
     })
     .then(() => {
-      return fs.mkdir(assetsFolderPath, { recursive: true })
+      return fs.mkdir(assetsFolderPath)
     })
     .then(() => {
       const tasks = new Listr(
