@@ -33,7 +33,7 @@ const mapping = {
 
 const app = (pageLink, destination) => {
   fs.readdir(destination).catch((err) => {
-    return new Promise.reject(err)
+    return Promise.reject(err)
   })
 
   const pageUrl = new URL(pageLink)
