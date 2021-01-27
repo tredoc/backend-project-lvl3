@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const program = require('commander')
-const pageLoader = require('../src')
-const { red, green } = require('chalk')
+const program = require('commander');
+const { red } = require('chalk');
+const pageLoader = require('../src');
 
 program
   .version('0.0.1')
@@ -12,9 +12,9 @@ program
   .helpOption('-h, --help', 'output usage information')
   .action((url) => {
     pageLoader(url, program.output).catch((err) => {
-      console.error(red(err.message))
-      process.exit(1)
-    })
-  })
+      console.error(red(err.message));
+      process.exit(1);
+    });
+  });
 
-program.parse(process.argv)
+program.parse(process.argv);
