@@ -34,7 +34,6 @@ const mapping = {
 const app = (pageLink, destination) => {
   fs.readdir(destination).catch((err) => {
     console.error(err.message)
-    process.exit(1)
   })
   const pageUrl = new URL(pageLink)
   const { hostname, pathname } = pageUrl
