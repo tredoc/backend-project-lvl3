@@ -63,9 +63,16 @@ const app = (pageLink, destination) => {
             const localPath = path.join(assetsFolderPath, name)
             const absolutePath = new URL(srcLink, pageLink).href
 
-            $(this).attr(attrName, path.join(assetsFolderName, name))
+            const addHtml = (filePath) => {
+              if (filePath.split('.').length <= 1) {
+                return filePath + '.html'
+              }
+              return filePath
+            }
 
-            return assets.push({ absolutePath, localPath })
+            $(this).attr(attrName, path.join(assetsFolderName, addHtml(name)))
+
+            return assets.push({ absolutePath, localPath: addHtml(localPath) })
           }
         })
       })

@@ -58,7 +58,7 @@ test('Downloaded files check', async () => {
   expect(downloadedFolderFiles).toEqual([
     'ru-hexlet-io-assets-application.css',
     'ru-hexlet-io-assets-professions-nodejs.png',
-    'ru-hexlet-io-courses',
+    'ru-hexlet-io-courses.html',
     'ru-hexlet-io-packs-js-runtime.js',
   ])
 })
