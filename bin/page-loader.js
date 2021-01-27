@@ -12,7 +12,8 @@ program
   .helpOption('-h, --help', 'output usage information')
   .action((url) => {
     pageLoader(url, program.output).catch((err) => {
-      console.log(red(err.message))
+      console.error(red(err.message))
+      process.exit(1)
     })
   })
 
