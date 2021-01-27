@@ -1,11 +1,11 @@
+/* eslint-disable */
 const fs = require('fs').promises;
 const path = require('path');
 const os = require('os');
 const nock = require('nock');
 const app = require('../src/index');
 
-const getFixturePath = (fileName) =>
-  path.join(__dirname, '..', '__fixtures__', fileName);
+const getFixturePath = (fileName) => path.join(__dirname, '..', '__fixtures__', fileName);
 
 const testPageLink = 'https://ru.hexlet.io/courses';
 
@@ -46,7 +46,7 @@ test('Should contain folder with downloaded files', async () => {
 
 test('Downloaded files check', async () => {
   const downloadedFolderFiles = await fs.readdir(
-    path.join(tempDir, 'ru-hexlet-io-courses_files')
+    path.join(tempDir, 'ru-hexlet-io-courses_files'),
   );
   expect(downloadedFolderFiles).toEqual([
     'ru-hexlet-io-assets-application.css',
@@ -59,11 +59,11 @@ test('Downloaded files check', async () => {
 test('HTML file should have modified links', async () => {
   const downloadedHtmlContent = await fs.readFile(
     path.join(tempDir, 'ru-hexlet-io-courses.html'),
-    'utf-8'
+    'utf-8',
   );
   expect(
     downloadedHtmlContent.includes(
-      'ru-hexlet-io-courses_files/ru-hexlet-io-assets-professions-nodejs.png'
-    )
+      'ru-hexlet-io-courses_files/ru-hexlet-io-assets-professions-nodejs.png',
+    ),
   ).toBeTruthy();
 });
